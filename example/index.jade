@@ -1,0 +1,39 @@
+!!! 5
+head
+  title='vand'
+  script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+  link(rel='stylesheet', href='bootstrap.min.css')
+  script(src='vand.js')
+body
+  div.container
+    form.form-horizontal#form01
+      fieldset
+        legend Registration
+        div.control-group
+          label.control-label(for="input_email") Email
+          div.controls
+            input.input-xlarge(data-vand-validation='required email', data-vand-trigger='form:submit', type='email', name="input_email")
+            p.help-block This field will be validated using 
+              b required 
+              | and 
+              b email
+        div.control-group
+          label.control-label(for="input_password") Password
+          div.controls
+            input.input-xlarge(data-vand-validation='required password?length=7', data-vand-trigger='form:submit', type='password', name="input_password")
+            p.help-block This field will be validated using 
+              b required 
+              | and 
+              b password
+        div.control-group
+          label.control-label(for="input_password2") Password Confirm
+          div.controls
+            input.input-xlarge(data-vand-validation='required password?length=7 equal?field=input_password', data-vand-trigger='form:submit this:blur', type='password', name="input_password2")
+            p.help-block This field will be validated using 
+              b required 
+              | and 
+              b password 
+              | and 
+              b equal:input_password
+        
+        
